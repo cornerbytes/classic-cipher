@@ -4,10 +4,11 @@ from string import ascii_uppercase as UPPERCASE
 class caesar:
     
     def __init__(self):
-        self.data = "None"
+        pass
     
     # add user_input
     def new(self, user_input: str, key: int = 26):
+
         self.input, self.key = user_input, key
     
     # update user_input
@@ -15,9 +16,11 @@ class caesar:
 
         self.input += update_user_input
     
+    # encryption function
     def encrypt(self):
 
         result = ''
+
         for i in self.input:
 
             if i.isupper():
@@ -25,17 +28,18 @@ class caesar:
 
             elif i.islower():
                 result += LOWERCASE[ (LOWERCASE.index(i) + self.key) % 26]
+
             else:
                 result += i
 
-        self.data = result
+        return result
 
+    # decryption function 
     def decrypt(self):
-
-        self.key = 26 - self.key
-        self.encrypt()
-
         
-    def __str__(self):
-
-       return self.data
+        # for decryption function we can use 26 - key to get a plaintext using encryption function
+        self.key = 26 - self.key
+        return self.encrypt()
+        
+    def __str__(self): 
+        return self.input

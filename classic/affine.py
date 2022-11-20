@@ -1,32 +1,11 @@
-"""
-(+)Example to encrypt a plaintext
-
-    testing = affine()
-    testing.new('this is a plaintext!!!', 21, 123)
-    testing.encrypt()
-    print(testing)
-
-    result : ckfh fh t wqtfgczic!!!
-
-(+)Example to decrypt a plaintext
-
-    testing_2 = affine()
-    testing_2.new('ckfh fh t wqtfgczic!!!', 21, 123)
-    testing_2.decrypt()
-    print(testing_2)
-
-    result : this is a plaintext!!!
-"""
-
 from math import gcd
 from string import ascii_lowercase as LOWERCASE
 from string import ascii_uppercase as UPPERCASE
 
 class affine:
 
-    
     def __init__(self):
-        self.data = ''
+        pass
 
     # add user_input, first key and second key
     def new(self, user_input: str, a: int, b: int):
@@ -72,7 +51,7 @@ class affine:
             else:
                 result += i
 
-        self.data = result
+        return result
 
     # decryption function
     def decrypt(self):
@@ -90,8 +69,7 @@ class affine:
             else:
                 result += i
         
-        self.data = result
+        return result
 
-    # return the plaintext or ciphertext
     def __str__(self):
-        return self.data
+        return self.input
