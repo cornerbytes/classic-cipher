@@ -45,7 +45,7 @@ class vigenere:
                 result += UPPERCASE[ (UPPERCASE.index(self.clean_ciphertext[idx]) + UPPERCASE.index(self.key[idx])) %26]
             
             else:
-                result += LOWERCASE[ (LOWERCASE.index(self.clean_ciphertext[idx]) + UPPERCASE.index(self.key[idx])) %26]
+                result += LOWERCASE[ (LOWERCASE.index(self.clean_ciphertext[idx]) + LOWERCASE.index(self.key[idx])) %26]
         
         return self.unpadding(result)
     
@@ -60,7 +60,7 @@ class vigenere:
                 result += UPPERCASE[ (UPPERCASE.index(self.clean_ciphertext[idx]) - UPPERCASE.index(self.key[idx])) %26]
             
             else:
-                result += LOWERCASE[ (LOWERCASE.index(self.clean_ciphertext[idx]) - UPPERCASE.index(self.key[idx])) %26]
+                result += LOWERCASE[ (LOWERCASE.index(self.clean_ciphertext[idx]) - LOWERCASE.index(self.key[idx])) %26]
         
         return self.unpadding(result)
     
